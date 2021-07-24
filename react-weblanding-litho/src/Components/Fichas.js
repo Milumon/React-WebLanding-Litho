@@ -4,7 +4,8 @@ import Button from 'react-bootstrap/Button'
 import { getCiudad } from '../services/firebase';
 import Modal from 'react-bootstrap/Modal'
 import Image from 'react-bootstrap/Image'
-
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 function Fichas(props) {
 
@@ -30,14 +31,13 @@ function Fichas(props) {
 
 
     return (
-        <div>
+        <div >
+ 
 
-        <section className="padded">
-            <div style={{width:"200px" }} 
-                className="container ">
+        <section className="padded"> 
 
             <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
+        <Modal.Header>
           <Modal.Title>{dataModal.nombre}</Modal.Title>
         </Modal.Header>
         <Modal.Body><Image src={dataModal.urlImage} fluid /></Modal.Body>
@@ -48,35 +48,36 @@ function Fichas(props) {
           <Button variant="primary" onClick={handleClose}>
             Save Changes
           </Button>
-        </Modal.Footer>
-      </Modal>   
+          </Modal.Footer>
+        </Modal>   
 
-                
-        {data.map((ciudad) => (
 
-            
-            <Card style={{ width: '18rem' }} >
-            <Card.Img variant="top" src={ciudad.urlImage} />
-            <Card.Body>
-                <Card.Title>{ciudad.nombre}</Card.Title>
-                <Card.Text>
-                <p>{ciudad.poblacion} </p>
-                <p>{ciudad.pais} </p>
-                <p>{ciudad.presidente} </p>
-                <p>{ciudad.moneda} </p>
+        <Row xs={1} md={4}  className="g-4 p-4">
+            {data.map((ciudad, idx) => (
+              <Col>
+                <Card>
+                  <Card.Img variant="top" src={ciudad.urlImage} />
+                  <Card.Body>
+                    <Card.Title>{ciudad.nombre}</Card.Title>
+                    <Card.Text>
+                    <p>{ciudad.poblacion} </p>
+                    <p>{ciudad.pais} </p>
+                    <p>{ciudad.presidente} </p>
+                    <p>{ciudad.moneda} </p>
 
-                </Card.Text>
-                <Button variant="primary"  onClick={() => showFormUpdate(ciudad)}>Go somewhere</Button>
-            </Card.Body>
-            </Card>
+                    <Button variant="primary"  onClick={() => showFormUpdate(ciudad)}>Go somewhere</Button>
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
+          </Row>
+      
 
-            
-          ))}
-
-          
-
-            </div>
+                 
             </section>
+
+            
         </div>
     );
 }

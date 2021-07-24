@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Table } from "react-bootstrap";
+import { Table, Modal, Button } from "react-bootstrap";
 import { getCiudad, createCiudad, deleteCiudad } from "../services/firebase";
 import { ModalUpdate } from "./ModalUpdate";
 
@@ -108,7 +108,9 @@ function TableComponent(props) {
                 <ModalUpdate dato={dato} />
               </td>
               <td>
-                <button onClick={() => handleShowAlert(dato.id)}>borrar</button>
+                <Button variant="primary" onClick={() => handleShowAlert(dato.id)}>
+                    <i className="fas fa-edit">Borrar</i>
+                </Button>
               </td>
             </tr>
           ))}

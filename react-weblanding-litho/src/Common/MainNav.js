@@ -29,12 +29,12 @@ function MainNav(props) {
               </a>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/banner">
+              <Link className="nav-link active liah" to="/banner">
                 Banner
               </Link>
             </li>
             <li className="nav-item ms-5">
-              <Link className="nav-link" to="/fichas">
+              <Link className="nav-link active liah" to="/fichas">
                 Fichas
               </Link>
             </li>

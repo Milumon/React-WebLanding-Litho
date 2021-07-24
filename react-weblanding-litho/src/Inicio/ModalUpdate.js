@@ -28,7 +28,7 @@ export const ModalUpdate = (props) => {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        <i className="fas fa-edit"></i>
+        <i className="fas fa-edit">Editar</i>
       </Button>
 
       <Modal show={show} onHide={handleClose}>
