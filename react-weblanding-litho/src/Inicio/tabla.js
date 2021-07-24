@@ -11,7 +11,8 @@ function TableComponent(props) {
     pais: "",
     poblacion: "",
     presidente: "",
-    moneda: ""
+    moneda: "",
+    imageURL: "",
   });
 
   useEffect(() => {
@@ -75,11 +76,10 @@ function TableComponent(props) {
           type="text"
           placeholder="image"
           onChange={handleInputChange}
-          name="image"
+          name="urlImage"
         />
         <button type="submit"> + Añadir ciudad</button>
-      </form>
- 
+      </form> 
       <Table responsive>
         <thead>
           <tr>

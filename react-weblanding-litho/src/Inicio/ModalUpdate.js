@@ -15,17 +15,11 @@ export const ModalUpdate = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    console.log(ciudades)
     try {
-      const d = await editCiudades(
-        ciudades.id,
-        ciudades.nombre,
-        ciudades.pais,
-        ciudades.poblacion,
-        ciudades.presidente,
-        ciudades.moneda,
-        ciudades.urlImage
-      );
-      console.log(d)
+      await editCiudades(ciudades
+      ); 
       handleClose();
     }catch(err) {console.log(err)}
     
