@@ -1,0 +1,9 @@
+.experience{
+
+    height: 100vh;
+    background-image: url('../assets/home-startup/home-startup-about-bg.jpg');
+    background-position: center;
+    margin-top: -50px;
+}
+
+/* import banner3 from '../assets/banner/home-startup-slider-bg-03.jpg'; */
